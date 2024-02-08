@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web기 C형</title>
   <link rel="stylesheet" href="./css/main.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
   <script defer src="./js/main.js"></script>
+  <script>
+    $(function () {
+      // $("body").addClass("CheckJquery") // jquery 잘 들어왔는지 꼭 체크!
+      setInterval(anifun, 3000)
+
+      function anifun() {
+        $(".swiper-wrapper").animate({ // animate(css, 스피드, function(){})
+          "marginLeft": -$(".swiper-slide").width() // slide 너비만큼 밀기
+        }, 600, function () {
+          $(".swiper-wrapper .swiper-slide").eq(0).appendTo($(".swiper-wrapper")) // appendTo에는 객체들어와야되서 $쓰기
+          $(".swiper-wrapper").css("marginLeft", 0) // 원상복귀
+        })
+      }
+
+
+
+    })
+  </script>
 </head>
 
 <body>
