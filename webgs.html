@@ -10,9 +10,12 @@
     crossorigin="anonymous"></script>
   <script defer src="./js/main.js"></script>
   <script>
+
     $(function () {
+      let count = 0;
+      let slideNum = $('.swiper-slide').length;
       // $("body").addClass("CheckJquery") // jquery 잘 들어왔는지 꼭 체크!
-      setInterval(anifun, 3000)
+      setInterval(fadefun, 3000)
 
       function anifun() {
         $(".swiper-wrapper").animate({ // animate(css, 스피드, function(){})
@@ -23,11 +26,12 @@
         })
       }
 
-      setInterval(function () {
-
-      }, 3000) // setInterval: 3초마다 실행
-
-
+      function fadefun() {
+        count++;
+        count = count % slideNum; // 3으로 나눴을때 나머지
+        $(".swiper-slide").eq(count).addClass("active").siblings().removeClass("active"); // siblings : 너를 뺀 나머지 형제요소
+        // console.log($(".swiper-slide"))
+      }
 
     })
   </script>
@@ -79,10 +83,10 @@
     </header>
     <div class="content w800">
       <div class="swiper h350 ofh">
-        <div class="swiper-wrapper d-flexxxx">
-          <div class="swiper-slide h350"><img src="./img/sw1.jpg" alt="sw"></div>
-          <div class="swiper-slide h350"><img src="./img/sw2.jpg" alt="sw"></div>
-          <div class="swiper-slide h350"><img src="./img/sw3.jpg" alt="sw"></div>
+        <div class="swiper-wrapper d-flexxxx rel">
+          <div class="swiper-slide h350 abs active"><img src="./img/sw1.jpg" alt="sw"></div>
+          <div class="swiper-slide h350 abs"><img src="./img/sw2.jpg" alt="sw"></div>
+          <div class="swiper-slide h350 abs"><img src="./img/sw3.jpg" alt="sw"></div>
         </div>
       </div>
       <div class="threeTab d-flex h200 ofh">

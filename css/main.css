@@ -106,7 +106,7 @@ a:hover {
 }
 
 .h350 {
-  height: 350PX;
+  height: 350px;
 }
 
 .h100 {
@@ -165,4 +165,18 @@ a:hover {
 /* ★ 활성화 : 대메뉴 아래로 마우스내려가도 빨간색 들어오게 */
 #gnb>li:hover>a {
   color: red;
+}
+
+/* fade */
+.swiper-slide {
+  left: 0;
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  transition: .5s;
+}
+
+.swiper-slide.active {
+  z-index: 999;
+  opacity: 1;
 }
