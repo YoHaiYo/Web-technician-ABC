@@ -16,12 +16,16 @@
 
       function anifun() {
         $(".swiper-wrapper").animate({ // animate(css, 스피드, function(){})
-          "marginLeft": -$(".swiper-slide").width() // slide 너비만큼 밀기
+          "marginTop": -$(".swiper").height() // swiper 너비만큼 밀기
         }, 600, function () {
           $(".swiper-wrapper .swiper-slide").eq(0).appendTo($(".swiper-wrapper")) // appendTo에는 객체들어와야되서 $쓰기
-          $(".swiper-wrapper").css("marginLeft", 0) // 원상복귀
+          $(".swiper-wrapper").css("marginTop", 0) // 원상복귀
         })
       }
+
+      setInterval(function () {
+
+      }, 3000) // setInterval: 3초마다 실행
 
 
 
@@ -75,10 +79,10 @@
     </header>
     <div class="content w800">
       <div class="swiper h350 ofh">
-        <div class="swiper-wrapper d-flex">
-          <div class="swiper-slide"><img src="./img/sw1.jpg" alt="sw"></div>
-          <div class="swiper-slide"><img src="./img/sw2.jpg" alt="sw"></div>
-          <div class="swiper-slide"><img src="./img/sw3.jpg" alt="sw"></div>
+        <div class="swiper-wrapper d-flexxxx">
+          <div class="swiper-slide h350"><img src="./img/sw1.jpg" alt="sw"></div>
+          <div class="swiper-slide h350"><img src="./img/sw2.jpg" alt="sw"></div>
+          <div class="swiper-slide h350"><img src="./img/sw3.jpg" alt="sw"></div>
         </div>
       </div>
       <div class="threeTab d-flex h200 ofh">
